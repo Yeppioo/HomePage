@@ -1,142 +1,145 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    user-select: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
 }
 
 body {
-    background: url(../assets/wall.webp) no-repeat center center fixed;
-    background-size: cover;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden; /* Prevent scrollbar during animation */
-    backdrop-filter: blur(50px); /* 添加高斯模糊 */
+  background: url(../assets/wall.webp) no-repeat center center fixed;
+  background-size: cover;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden; /* Prevent scrollbar during animation */
+  backdrop-filter: blur(50px); /* 添加高斯模糊 */
 }
 
 .section-title {
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px;
-    text-align: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  text-align: center;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 100px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  flex-wrap: wrap;
 }
 
 .text-content {
-    text-align: left;
-    max-width: 500px;
-    opacity: 0; /* Initial state for animation */
-    transform: translateY(20px); /* Initial state for animation */
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 0.2s; /* 同步动画延迟 */
+  text-align: left;
+  max-width: 500px;
+  opacity: 0; /* Initial state for animation */
+  transform: translateY(20px); /* Initial state for animation */
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 0.2s; /* 同步动画延迟 */
 }
 
 .text-content h1 {
-    font-size: 3em;
-    margin-bottom: 15px;
-    color: #ffffff; /* 默认颜色 */
+  font-size: 3em;
+  margin-bottom: 15px;
+  color: #ffffff; /* 默认颜色 */
 }
 
 .text-content p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-bottom: 10px;
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 
 .highlight {
-    background-color: #007bff;
-    color: white;
-    padding: 3px 8px;
-    border-radius: 5px;
-    font-weight: bold;
+  background-color: #007bff;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 .buttons {
-    margin-top: 20px;
-    display: flex;
-    gap: 15px;
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
 }
 
 .button {
-    display: inline-block;
-    padding: 10px 25px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+  display: inline-block;
+  padding: 10px 25px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 .button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .image-content {
-    opacity: 0; /* Initial state for animation */
-    transform: translateY(20px); /* Initial state for animation */
-    animation: slideUp 1s ease-out forwards;
-    animation-delay: 0.2s; /* 同步动画延迟 */
+  opacity: 0; /* Initial state for animation */
+  transform: translateY(20px); /* Initial state for animation */
+  animation: slideUp 1s ease-out forwards;
+  animation-delay: 0.2s; /* 同步动画延迟 */
 }
 
 .image-content img {
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.5);
 }
 
 @keyframes slideUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .name-highlight {
-    color: #4CCAF5; /* 紫色 */
+  color: #4ccaf5; /* 紫色 */
 }
 
 @media (max-width: 968px) {
-    .container {
-        flex-direction: column-reverse; /* 使头像在文字上方 */
-        gap: 30px; /* 调整小屏幕下的间距 */
-    }
+  .container {
+    flex-direction: column-reverse; /* 使头像在文字上方 */
+    gap: 30px; /* 调整小屏幕下的间距 */
+  }
 
-    .text-content {
-        text-align: center;
-        max-width: 100%; /* 小屏幕下文字内容宽度占满 */
-    }
+  .text-content {
+    text-align: center;
+    max-width: 100%; /* 小屏幕下文字内容宽度占满 */
+  }
 
-    .text-content h1 {
-        font-size: 2.5em;
-    }
+  .text-content h1 {
+    font-size: 2.5em;
+  }
 
-    .text-content p {
-        font-size: 1em;
-    }
+  .text-content p {
+    font-size: 1em;
+  }
 
-    .buttons {
-        justify-content: center;
-    }
+  .buttons {
+    justify-content: center;
+  }
 
-    .image-content {
-        margin-top: 20px; /* 头像在上方时增加顶部间距 */
-        margin-bottom: 0; /* 移除底部间距 */
-    }
+  .image-content {
+    margin-top: 20px; /* 头像在上方时增加顶部间距 */
+    margin-bottom: 0; /* 移除底部间距 */
+  }
 
-    .image-content img {
-        width: 200px; /* 小屏幕下头像尺寸调整 */
-        height: 200px;
-    }
+  .image-content img {
+    width: 200px; /* 小屏幕下头像尺寸调整 */
+    height: 200px;
+  }
+
+  .iconContainer {
+    justify-content: center;
+  }
 }
