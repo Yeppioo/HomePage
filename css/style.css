@@ -23,11 +23,21 @@ body {
   justify-content: center;
   min-height: 100vh;
   overflow: hidden; /* Prevent scrollbar during animation */
-  backdrop-filter: blur(50px); /* 添加高斯模糊 */
   overflow-x: hidden;
-  position: relative;
   width: 100vw;
   overflow-y: scroll;
+  overflow-y: scroll;
+}
+
+.background-blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(50px); /* 添加高斯模糊 */
+  -webkit-backdrop-filter: blur(50px); /* 兼容性 */
+  z-index: -1; /* 确保它在内容之下，但在 body 背景之上 */
 }
 
 .cursor-dot {
