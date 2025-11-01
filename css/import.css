@@ -1,0 +1,46 @@
+.welcome {
+    font-size: 65px;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.gradientText {
+    font-family: "title";
+    margin-left: -34px;
+    color: #41d1ff;
+}
+
+@font-face {
+    font-family: "title";
+    src: url(../assets/Pacifico-Regular.ttf);
+}
+
+.description {
+    font-size: 20px;
+    margin-top: 7px;
+}
+
+@media (max-width: 800px) {
+    .description {
+        font-size: 4vw;
+    }
+
+    .welcome {
+            font-size: 10vw;
+    }
+}
+
+.purpleText {
+    color: #ff6ea3;
+    font-weight: 800;
+}
+
+.textBackground {
+    font-weight: 800;
+    background: #00000040;
+    border-radius: 5px;
+    font-size: 17px;
+    margin: 0 3px;
+    padding: 2px 4px;
+}
