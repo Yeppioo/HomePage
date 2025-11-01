@@ -30,9 +30,13 @@ cursorDot.style.left = `-20px`;
 cursorDot.style.top = `-20px`;
 
 document.addEventListener("mousemove", (e) => {
-  // 直接使用鼠标位置，减去小圆点半径
-  cursorDot.style.left = `${e.clientX - 10 + 1}px`;
-  cursorDot.style.top = `${e.clientY - 10 + 1}px`;
+  cursorDot.style.left = `${e.pageX - 10 + 1}px`;
+  cursorDot.style.top = `${e.pageY - 10 + 1}px`;
+});
+
+document.addEventListener("scroll", (e) => {
+  cursorDot.style.left = `${e.pageX - 10 + 1}px`;
+  cursorDot.style.top = `${e.pageY - 10 + 1}px`;
 });
 
 document.addEventListener("mousedown", () => {

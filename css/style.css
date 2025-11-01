@@ -5,177 +5,29 @@
   user-select: none;
   cursor: url(../assets/cursor.svg) 4 4, auto !important;
 }
-
+main {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+}
+@font-face {
+  font-family: "xknl";
+  src: url(../assets/xknl.ttf);
+}
 body {
+  font-family: "a", sans-serif;
   background: url(../assets/wall.webp) no-repeat center center fixed;
   background-size: cover;
   color: #e0e0e0;
   display: flex;
   justify-content: center;
-  align-items: center;
   min-height: 100vh;
   overflow: hidden; /* Prevent scrollbar during animation */
   backdrop-filter: blur(50px); /* 添加高斯模糊 */
-}
-
-.section-title {
+  overflow-x: hidden;
+  position: relative;
   width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  display: flex;
-}
-
-.section-title .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1200px;
-  gap: 100px;
-  flex-wrap: wrap;
-}
-
-.text-content {
-  text-align: left;
-  max-width: 500px;
-  opacity: 0; /* Initial state for animation */
-  transform: translateY(20px); /* Initial state for animation */
-  animation: slideUp 1s ease-out forwards;
-  animation-delay: 0.2s; /* 同步动画延迟 */
-}
-
-.text-content h1 {
-  font-size: 3em;
-  margin-bottom: 15px;
-  color: #ffffff; /* 默认颜色 */
-}
-
-.text-content p {
-  font-size: 1.2em;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
-.highlight {
-  background-color: #007bff;
-  color: white;
-  padding: 3px 8px;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.buttons {
-  margin-top: 20px;
-  display: flex;
-  gap: 15px;
-}
-
-.button {
-  display: inline-block;
-  padding: 10px 25px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: #0056b3;
-}
-
-.image-content {
-  opacity: 0; /* Initial state for animation */
-  transform: scale(0); /* Initial state for scale-in animation */
-  animation: scaleIn 1s ease-out forwards;
-  animation-delay: 0.2s; /* 同步动画延迟 */
-}
-
-.image-content img {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  animation: breathe 2s infinite; /* 应用呼吸动画 */
-}
-
-@keyframes breathe {
-  0% {
-    transform: translateY(5px);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-  100% {
-    transform: translateY(5px);
-  }
-}
-
-@keyframes slideUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-@keyframes scaleIn {
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-@keyframes iconItemIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.iconItem {
-  transform: translateY(20px);
-  opacity: 0;
-  animation: iconItemIn 0.5s ease-out forwards;
-}
-
-.name-highlight {
-  color: #4ccaf5; /* 紫色 */
-}
-
-@media (max-width: 968px) {
-  .section-title .container {
-    flex-direction: column-reverse; /* 使头像在文字上方 */
-    gap: 30px; /* 调整小屏幕下的间距 */
-  }
-
-  .text-content {
-    text-align: center;
-    max-width: 100%; /* 小屏幕下文字内容宽度占满 */
-  }
-
-  .text-content h1 {
-    font-size: 2.5em;
-  }
-
-  .text-content p {
-    font-size: 1em;
-  }
-
-  .buttons {
-    justify-content: center;
-  }
-
-  .image-content {
-    margin-top: 20px; /* 头像在上方时增加顶部间距 */
-    margin-bottom: 0; /* 移除底部间距 */
-  }
-
-  .image-content img {
-    width: 200px; /* 小屏幕下头像尺寸调整 */
-    height: 200px;
-  }
-
-  .iconContainer {
-    justify-content: center;
-  }
+  overflow-y: scroll;
 }
 
 .cursor-dot {
@@ -183,7 +35,7 @@ body {
   height: 20px;
   background-color: rgba(128, 128, 128, 0.5);
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
   pointer-events: none;
   z-index: 9999;
   transition: transform 0.1s ease;
@@ -193,4 +45,20 @@ body {
 
 .cursor-dot.active {
   transform: scale(0.5);
+}
+/* 全局滚动条美化 */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff6ea3;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(252, 158, 192);
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
 }

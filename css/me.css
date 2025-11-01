@@ -1,0 +1,47 @@
+.section-me {
+  background: #fafafa;
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  border-radius: 12px;
+}
+.github-con-img {
+  width: calc(100% - 40px);
+  margin: 20px;
+}
+.me-title-text {
+  color: #8b5a8c;
+  font-size: 21px;
+  margin-left: 10px;
+  font-weight: bold;
+  font-family: "xknl", sans-serif;
+  line-height: 1;
+  margin-top: 3px;
+}
+.me-title svg {
+  width: 24px;
+  height: 24px;
+  fill: #8b5a8c;
+}
+.me-title {
+  display: flex;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.me-big-title {
+  font-family: "xknl", sans-serif;
+  color: #8b5a8c;
+  font-size: 26px;
+  margin-top: 3px;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .github-con-container {
+    display: none;
+  }
+  .me-big-title {
+    font-size: 20px;
+  }
+}
