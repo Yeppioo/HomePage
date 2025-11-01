@@ -21,7 +21,6 @@ body {
 .section-title {
   width: 100vw;
   height: 100vh;
-  padding: 20px;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -87,8 +86,8 @@ body {
 
 .image-content {
   opacity: 0; /* Initial state for animation */
-  transform: translateY(20px); /* Initial state for animation */
-  animation: slideUp 1s ease-out forwards;
+  transform: scale(0); /* Initial state for scale-in animation */
+  animation: scaleIn 1s ease-out forwards;
   animation-delay: 0.2s; /* 同步动画延迟 */
 }
 
@@ -116,6 +115,24 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+@keyframes scaleIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes iconItemIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.iconItem {
+  transform: translateY(20px);
+  opacity: 0;
+  animation: iconItemIn 0.5s ease-out forwards;
 }
 
 .name-highlight {
