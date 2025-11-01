@@ -1,10 +1,138 @@
 .section-me {
-  background: #fafafa;
   width: 100%;
   max-width: 1200px;
+  border-radius: 12px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.me-content-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 20px;
+}
+
+.me-experience-container {
+  background: #fff;
+  border-radius: 12px;
   padding: 20px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.me-left-column,
+.me-right-column {
+  flex: 1;
+  padding: 20px;
+  background: #fff;
   border-radius: 12px;
 }
+
+.me-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.me-name {
+  font-family: "xknl", sans-serif;
+  color: #8b5a8c;
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.me-description {
+  font-size: 14px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.me-social-links {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.me-social-links a {
+  color: #8b5a8c;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.me-info {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.me-history-title {
+  font-family: "xknl", sans-serif;
+  color: #8b5a8c;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.me-timeline {
+  position: relative;
+  padding-left: 20px;
+}
+
+.me-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #eee;
+}
+
+.me-timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.me-timeline-dot {
+  position: absolute;
+  left: -6px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #8b5a8c;
+}
+
+.me-timeline-date {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 5px;
+}
+
+.me-timeline-event-title {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.me-timeline-event-description {
+  font-size: 13px;
+  color: #666;
+}
+
 .github-con-img {
   width: calc(100% - 40px);
   margin: 20px;
@@ -43,5 +171,8 @@
   }
   .me-big-title {
     font-size: 20px;
+  }
+  .me-content-container {
+    flex-direction: column;
   }
 }
