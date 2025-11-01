@@ -46,3 +46,9 @@ document.addEventListener("mousedown", () => {
 document.addEventListener("mouseup", () => {
   cursorDot.classList.remove("active");
 });
+
+document.querySelector('.scroll-down-arrow').addEventListener('click', () => {
+  document.querySelector('.section-me').scrollIntoView({
+    behavior: 'smooth'
+  });
+});
