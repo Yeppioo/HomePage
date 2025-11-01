@@ -23,3 +23,22 @@ function toggleClass(selector, className) {
     element.classList.toggle(className);
   });
 }
+
+const cursorDot = document.querySelector(".cursor-dot");
+
+cursorDot.style.left = `-20px`;
+cursorDot.style.top = `-20px`;
+
+document.addEventListener("mousemove", (e) => {
+  // 直接使用鼠标位置，减去小圆点半径
+  cursorDot.style.left = `${e.clientX - 10 + 1}px`;
+  cursorDot.style.top = `${e.clientY - 10 + 1}px`;
+});
+
+document.addEventListener("mousedown", () => {
+  cursorDot.classList.add("active");
+});
+
+document.addEventListener("mouseup", () => {
+  cursorDot.classList.remove("active");
+});

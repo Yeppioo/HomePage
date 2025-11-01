@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   user-select: none;
+  cursor: url(../assets/cursor.svg) 4 4, auto !important;
 }
 
 body {
@@ -18,16 +19,19 @@ body {
 }
 
 .section-title {
-  width: 100%;
-  max-width: 1200px;
+  width: 100vw;
+  height: 100vh;
   padding: 20px;
-  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
-.container {
+.section-title .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 1200px;
   gap: 100px;
   flex-wrap: wrap;
 }
@@ -107,7 +111,7 @@ body {
 }
 
 @media (max-width: 968px) {
-  .container {
+  .section-title .container {
     flex-direction: column-reverse; /* 使头像在文字上方 */
     gap: 30px; /* 调整小屏幕下的间距 */
   }
@@ -142,4 +146,21 @@ body {
   .iconContainer {
     justify-content: center;
   }
+}
+
+.cursor-dot {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(128, 128, 128, 0.5);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  left: 0;
+  top: 0;
+}
+
+.cursor-dot.active {
+  transform: scale(0.5);
 }
