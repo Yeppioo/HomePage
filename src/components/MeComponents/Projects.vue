@@ -17,6 +17,35 @@
       </svg>
       <span class="me-title-text">主要项目</span>
     </p>
+
+    <div class="projects">
+      <div @click="open('https://lyra.yik.at/')" class="project-card project-card-blue">
+        <div class="project-content">
+          <h3 class="project-title">Lyra</h3>
+          <p class="project-description">
+            基于Vue的静态音乐播放器, 使用网易云音乐api, 支持搜索音乐/查看歌手/评论等功能
+          </p>
+        </div>
+        <div class="project-tags">
+          <span class="tag" style="background-color: #dbfef4; color: #3caf76">Vue.js</span>
+          <span class="tag" style="background-color: #ffedd5; color: #9a3412">Pinia</span>
+          <span class="tag" style="background-color: #dbeafe; color: #3c40af">TypeScript</span>
+        </div>
+      </div>
+      <div @click="open('https://ymcl.yik.at/')" class="project-card project-card-green">
+        <div class="project-content">
+          <h3 class="project-title">Yu minecraft Launcher</h3>
+          <p class="project-description">
+            一个跨平台 Minecraft 启动器，支持 Windows, MacOS, Linux 等操作系统
+          </p>
+        </div>
+        <div class="project-tags">
+          <span class="tag" style="background-color: #fedbdb; color: #af3c3c">Avalonia</span>
+          <span class="tag" style="background-color: #dbeafe; color: #3c40af">.NET Core</span>
+          <span class="tag" style="background-color: #f3e8ff; color: #6b21a8">C#</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -45,4 +74,66 @@
   flex-direction: row;
   justify-content: flex-start;
 }
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  font-family: 'xknl', sans-serif;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card-blue {
+  background-color: #eef3ff; /* Light blue background */
+  border: #dbeafe solid 1px;
+}
+
+.project-card-green {
+  background-color: #edfdf4; /* Light green background */
+  border: #dcfce7 solid 1px;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  line-height: 1;
+  font-family: 'xknl', sans-serif;
+}
+
+.project-description {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: bold;
+}
 </style>
+<script setup lang="ts">
+const open = (url: string) => {
+  window.open(url);
+};
+</script>
