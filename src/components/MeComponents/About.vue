@@ -3,10 +3,12 @@
   <h2 class="me-big-title">关于我 (●'◡'●)</h2>
   <GithubActivity />
   <Skills />
+  <Educate />
 </template>
 
 <script setup lang="ts">
 import GithubActivity from './GithubActivity.vue';
+import Educate from './Educate.vue';
 import Skills from './Skills.vue';
 </script>
 
