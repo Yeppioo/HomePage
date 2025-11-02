@@ -5,12 +5,15 @@
   </main>
 
   <div class="tc">
-        <div onclick="" class="tc-main">
-            <img class="tc-img" alt="tc-img" />
-        </div>
+    <div onclick="" class="tc-main">
+      <img class="tc-img" alt="tc-img" />
     </div>
+  </div>
 
-    <div class="cursor-dot" :style="{ left: cursorX + 'px', top: cursorY + 'px' }" :class="{ active: isActive }"></div>
+  <div
+    class="cursor-dot"
+    :style="{ left: cursorX + 'px', top: cursorY + 'px' }"
+    :class="{ active: isActive }"></div>
 </template>
 
 <script setup lang="ts">
@@ -33,16 +36,14 @@ const animateCursor = () => {
   gsap.to(cursorX, {
     value: targetX.value,
     duration: 0.1,
-    ease: "power2.out",
-    onUpdate: () => {
-    }
+    ease: 'power2.out',
+    onUpdate: () => {},
   });
   gsap.to(cursorY, {
     value: targetY.value,
     duration: 0.1,
-    ease: "power2.out",
-    onUpdate: () => {
-    }
+    ease: 'power2.out',
+    onUpdate: () => {},
   });
   requestAnimationFrame(animateCursor);
 };
@@ -56,19 +57,18 @@ const handleMouseUp = () => {
 };
 
 onMounted(() => {
-  document.addEventListener("mousemove", handleMouseMove);
-  document.addEventListener("mousedown", handleMouseDown);
-  document.addEventListener("mouseup", handleMouseUp);
+  document.addEventListener('mousemove', handleMouseMove);
+  document.addEventListener('mousedown', handleMouseDown);
+  document.addEventListener('mouseup', handleMouseUp);
   animateCursor(); // Start the animation loop
 });
 
 onUnmounted(() => {
-  document.removeEventListener("mousemove", handleMouseMove);
-  document.removeEventListener("mousedown", handleMouseDown);
-  document.removeEventListener("mouseup", handleMouseUp);
+  document.removeEventListener('mousemove', handleMouseMove);
+  document.removeEventListener('mousedown', handleMouseDown);
+  document.removeEventListener('mouseup', handleMouseUp);
 });
 </script>
-
 
 <style scoped>
 .tc {
