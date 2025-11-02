@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+  cursor:
+    url(/src/assets/static/cursor.svg) 4 4,
+    auto !important;
+}
+@font-face {
+  font-family: 'xknl';
+  src: url(/src/assets/static/xknl.ttf);
+}
+body {
+  font-family: 'a', sans-serif;
+  background: url(/src/assets/static/wall.webp) no-repeat center center fixed;
+  background-size: cover;
+  color: #e0e0e0;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden; /* Prevent scrollbar during animation */
+  overflow-x: hidden;
+  width: 100vw;
+  overflow-y: scroll;
+  overflow-y: scroll;
+}
