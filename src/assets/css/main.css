@@ -13,7 +13,7 @@ body {
     url(/src/assets/static/cursor.svg) 4 4,
     auto !important;
   font-family: 'a', sans-serif;
-  background: url(/src/assets/static/wall.webp) no-repeat center center fixed;
+  background: url(/src/assets/static/wall.png) no-repeat center center fixed;
   background-size: cover;
   color: #e0e0e0;
   display: flex;
