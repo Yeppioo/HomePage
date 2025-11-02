@@ -4,9 +4,9 @@
     <MainView />
   </main>
 
-  <div class="tc">
-    <div onclick="" class="tc-main">
-      <img class="tc-img" alt="tc-img" />
+  <div class="tc" :class="{ active: isTcActive }" @click="pop()">
+    <div class="tc-main" :class="{ active: isTcActive }" @click.stop>
+      <img class="tc-img" :src="tcImageUrl" alt="tc-img" />
     </div>
   </div>
 
@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, provide } from 'vue';
 import gsap from 'gsap'; // Import gsap
 import MainView from './MainView.vue';
 
@@ -26,6 +26,8 @@ const cursorY = ref(-20);
 const targetX = ref(-20); // New ref for target X
 const targetY = ref(-20); // New ref for target Y
 const isActive = ref(false);
+const isTcActive = ref(false);
+const tcImageUrl = ref('');
 
 const handleMouseMove = (e: MouseEvent) => {
   targetX.value = e.clientX - 10 + 1; // Update targetX
@@ -68,6 +70,18 @@ onUnmounted(() => {
   document.removeEventListener('mousedown', handleMouseDown);
   document.removeEventListener('mouseup', handleMouseUp);
 });
+const pop = (imageURL?: string) => {
+  if (imageURL) {
+    tcImageUrl.value = imageURL;
+    isTcActive.value = true;
+  } else {
+    isTcActive.value = false;
+    tcImageUrl.value = '';
+  }
+};
+
+defineExpose({ pop });
+provide('popFunction', pop);
 </script>
 
 <style scoped>
@@ -147,12 +161,19 @@ body {
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 99999999;
   transition: transform 0.1s ease; /* Only keep transform transition for active state */
   left: 0;
   top: 0;
 }
 .cursor-dot.active {
   transform: scale(0.5);
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
 }
 </style>

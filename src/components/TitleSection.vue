@@ -51,7 +51,7 @@
           ><a
             class="iconItem"
             style="animation-delay: 0.6s"
-            @click="pop(wxzsm)"
+            @click="injectedPop(wxzsm)"
             href="javascript:void(0)">
             <svg
               t="1705247464964"
@@ -74,7 +74,7 @@
           ><a
             class="iconItem"
             style="animation-delay: 0.8s"
-            @click="pop(qq)"
+            @click="injectedPop(qq)"
             href="javascript:void(0)">
             <svg
               t="1712319361023"
@@ -95,7 +95,7 @@
         <img src="/src/assets/static/avatar.png" alt="Avatar" />
       </div>
     </div>
-    <div class="scroll-down-arrow">
+    <div @click.prevent="scrollToMeSection" class="scroll-down-arrow">
       <svg
         t="1762011520666"
         class="icon"
@@ -115,16 +115,23 @@
 </template>
 
 <script setup lang="ts">
+import { inject } from 'vue';
 import wxzsm from '../assets/static/wxzsm.jpg';
 import qq from '../assets/static/qq.jpg';
-import mail from '../assets/static/mail.jpg';
+import mail from '../assets/static/mail.png';
+
+const injectedPop = inject('popFunction') as (imageURL: string) => void;
 
 const handleMail = () => {
-  pop(mail);
+  injectedPop(mail);
   window.open('mailto:840673183@qq.com');
 };
 
-
+const scrollToMeSection = () => {
+  document.querySelector('.section-me')?.scrollIntoView({
+    behavior: 'smooth',
+  });
+};
 </script>
 
 <style scoped>
