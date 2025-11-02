@@ -18,7 +18,7 @@
       <span style="margin-top: -1px" class="me-title-text">技能专长</span>
     </p>
     <div class="skill-list">
-      <div class="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-4" data-v-889d749d="">
+      <div class="skill-grid">
         <!--[-->
         <div
           class="flex flex-col items-center justify-center bg-gray-50 rounded-lg p-3 hover:bg-gray-100 transition-colors group"
@@ -745,43 +745,37 @@
   margin-top: 20px;
 }
 
-.skill-list {
+.skill-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 10px;
   margin-top: 20px;
 }
 
-.skill-list > div {
+.skill-grid > div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fff; /* bg-gray-50 */
-  border-radius: 8px; /* rounded-lg */
-  padding: 12px; /* p-3 */
-  transition-property:
-    background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
-  transition-duration: 150ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow:
-    0 1px 3px 0 rgba(0, 0, 0, 0.1),
-    0 1px 2px 0 rgba(0, 0, 0, 0.06); /* shadow-sm */
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.2s ease;
 }
 
-.skill-list > div:hover {
-  background-color: #f7fafc; /* hover:bg-gray-100 */
+.skill-grid > div:hover {
+  background-color: #f3f4f6;
 }
 
-.skill-list svg {
-  width: 48px; /* w-12 */
-  height: 48px; /* h-12 */
-  margin-bottom: 8px; /* mb-2 */
+.skill-grid svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 8px;
 }
 
-.skill-list span {
-  font-size: 12px; /* text-xs */
-  color: #4a5568; /* text-gray-600 */
+.skill-grid span {
+  font-size: 12px;
+  color: #4a5568;
   text-align: center;
 }
 </style>
