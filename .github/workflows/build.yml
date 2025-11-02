@@ -1,0 +1,41 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [vue]
+  pull_request:
+    branches: [vue]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Copy vercel.json
+        run: cp vercel.json dist/vercel.json
+
+      - name: Deploy to dist branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.YEPPIOO_GITHUB_TOKEN }}
+          publish_dir: dist
+          publish_branch: production
+          keep_files: false
+          allow_empty_commit: false
+          commit_message: 'Deploy to production branch: ${{ github.sha }}'
+          force_orphan: true
