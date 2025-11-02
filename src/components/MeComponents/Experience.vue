@@ -93,7 +93,7 @@
 .me-timeline {
   position: relative;
   padding-left: 20px;
-  max-height: 278px; /* 可以根据需要调整高度 */
+  max-height: 266px; /* 可以根据需要调整高度 */
   overflow-y: auto;
 }
 
