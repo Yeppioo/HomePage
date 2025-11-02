@@ -142,7 +142,7 @@ provide('popFunction', pop);
 }
 body {
   font-family: 'a', sans-serif;
-  background: url(../assets/wall.png) no-repeat center center fixed;
+  background: url(../assets/wall.webp) no-repeat center center fixed;
   background-size: cover;
   color: #e0e0e0;
   display: flex;
