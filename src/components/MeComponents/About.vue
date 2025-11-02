@@ -4,12 +4,14 @@
   <GithubActivity />
   <Skills />
   <Educate />
+  <Projects />
 </template>
 
 <script setup lang="ts">
 import GithubActivity from './GithubActivity.vue';
 import Educate from './Educate.vue';
 import Skills from './Skills.vue';
+import Projects from './Projects.vue';
 </script>
 
 <style scoped>

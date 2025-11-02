@@ -63,6 +63,7 @@
   background-color: #faf5ff;
   border-radius: 12px;
   padding: 15px;
+  margin-top: 20px;
 }
 .edu-title {
   display: flex;
