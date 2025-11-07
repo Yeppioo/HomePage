@@ -60,6 +60,11 @@ const jump = (host: string) => {
 };
 </script>
 <style scoped>
+.s {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .pp {
   line-height: 1.6;
   color: #555;
