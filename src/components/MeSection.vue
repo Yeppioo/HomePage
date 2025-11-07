@@ -2,10 +2,14 @@
 import BasicInfo from './MeComponents/BasicInfo.vue';
 import Experience from './MeComponents/Experience.vue';
 import About from './MeComponents/About.vue';
+import Sites from './MeComponents/Sites.vue';
 </script>
 
 <template>
   <section class="section-me">
+    <div class="me-site-container">
+      <Sites />
+    </div>
     <div class="me-content-container">
       <div class="me-left-column">
         <BasicInfo />
@@ -59,11 +63,15 @@ import About from './MeComponents/About.vue';
     max-height: unset;
   }
 }
-.me-about-container {
+.me-about-container,
+.me-site-container {
   background: #fff;
   border-radius: 12px;
   padding: 20px;
   width: 100%;
   margin-top: 20px;
+}
+.me-site-container {
+  margin-bottom: 20px;
 }
 </style>
