@@ -116,7 +116,7 @@
 
 <script setup lang="ts">
 import { inject } from 'vue';
-import wxzsm from '../assets/static/wxzsm.jpg';
+import wxzsm from '../assets/static/wx.jpg';
 import qq from '../assets/static/qq.jpg';
 import mail from '../assets/static/mail.png';
 
