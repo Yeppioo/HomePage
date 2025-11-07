@@ -60,7 +60,7 @@
 
 <script setup lang="ts">
 import { inject } from 'vue';
-import mail from '../../assets/static/mail.png';
+import mail from '../../assets/static/qqmail.png';
 
 const injectedPop = inject('popFunction') as (imageURL: string) => void;
 

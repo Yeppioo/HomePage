@@ -118,7 +118,7 @@
 import { inject } from 'vue';
 import wxzsm from '../assets/static/wx.jpg';
 import qq from '../assets/static/qq.jpg';
-import mail from '../assets/static/mail.png';
+import mail from '../assets/static/qqmail.png';
 
 const injectedPop = inject('popFunction') as (imageURL: string) => void;
 
