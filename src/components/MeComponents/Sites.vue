@@ -16,11 +16,9 @@
       <span class="me-title-text">Sites</span>
     </p>
     <div class="content">
-      <div @click="jump(site.host)" v-for="site in sites" :key="site.host" class="s">
-        <div class="site">
-          <img class="site-img" :src="site.img" alt="pic" />
-          <p class="pp">{{ site.host }}</p>
-        </div>
+      <div @click="jump(site.host)" v-for="site in sites" :key="site.host" class="site">
+        <img class="site-img" :src="site.img" alt="pic" />
+        <p class="pp">{{ site.host }}</p>
       </div>
     </div>
   </div>
@@ -60,15 +58,14 @@ const jump = (host: string) => {
 };
 </script>
 <style scoped>
-.s {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 .pp {
   line-height: 1.6;
   color: #555;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  font-family: 'xknl';
+  font-size: 18px;
+  font-weight: bold;
 }
 .content {
   margin-top: 12px;
@@ -85,7 +82,7 @@ const jump = (host: string) => {
   align-items: center;
 }
 .site-img {
-  width: 160px;
+  width: calc(100% - 30px);
   border-radius: 10px;
   margin-top: 14px;
 }
