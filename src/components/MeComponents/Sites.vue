@@ -77,7 +77,6 @@ const jump = (host: string) => {
   background: #f3f4f6;
   border-radius: 12px;
   display: flex;
-  width: 190px;
   flex-direction: column;
   align-items: center;
 }
